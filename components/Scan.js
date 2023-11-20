@@ -6,9 +6,14 @@ const QRScanner = () => {
   const videoRef = useRef(null);
   const [result, setResult] = useState("No result");
 
+  // kamera belakang hp
+  const constraints = {
+    video: { facingMode: { exact: "environment" } }, // 'user' untuk kamera depan
+  };
+
   const startScanner = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      const stream = await navigator.mediaDevices.getUserMedia({ constraints });
       videoRef.current.srcObject = stream;
       QrScanner.scanImage(videoRef.current)
         .then((result) => setResult(result))
