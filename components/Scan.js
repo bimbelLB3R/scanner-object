@@ -13,7 +13,7 @@ const QRScanner = () => {
 
   const startScanner = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ constraints });
+      const stream = await navigator.mediaDevices.getUserMedia(constraints);
       videoRef.current.srcObject = stream;
       QrScanner.scanImage(videoRef.current)
         .then((result) => setResult(result))
