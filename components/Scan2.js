@@ -52,17 +52,14 @@ export default function Scan2() {
               />
               Your browser does not support the audio element.
             </audio>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center space-x-3 mt-10">
               <a
                 href="/scan"
-                className="p-2 m-10 bg-green-400 text-center rounded-full"
+                className="p-2 bg-green-400 text-center rounded-full"
               >
-                SCAN LAGI?
+                Ulangi
               </a>
-              <a
-                href="/"
-                className="p-2 m-10 bg-green-400 text-center rounded-full"
-              >
+              <a href="/" className="p-2 bg-green-400 text-center rounded-full">
                 HALAMAN UTAMA
               </a>
             </div>
