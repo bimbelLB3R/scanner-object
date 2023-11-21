@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
 import { useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function Scan2() {
   const [scanResult, setScanResult] = useState(null);
@@ -27,11 +27,6 @@ export default function Scan2() {
     function error(err) {
       console.warn(err);
     }
-
-    // Clean up the scanner when the component unmounts
-    return () => {
-      scanner.stop();
-    };
   }, []);
 
   useEffect(() => {
