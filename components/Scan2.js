@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 
 export default function Scan2() {
   const [scanResult, setScanResult] = useState(null);
-  const [hasilScan, setHasilScan] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -38,8 +37,6 @@ export default function Scan2() {
 
       // Redirect to the main page
       router.push("/");
-    } else {
-      setHasilScan(scanResult);
     }
   }, [router, scanResult]);
 
@@ -62,17 +59,14 @@ export default function Scan2() {
 
   return (
     <div>
-      {hasilScan ? (
+      {scanResult ? (
         <div className="flex justify-center items-center m-auto h-screen bg-[url('/image/bgsatt.jpeg')] bg-cover bg-no-repeat">
-          Success:{" "}
-          <a href="">
-            {hasilScan},{linkku}
-          </a>
+          Success: <a href="">{scanResult}</a>
           <div>
             <audio id="audioku" controls>
               <source
                 // src="https://drive.google.com/uc?id=1YQ4FwNk1nEEaLtDpgeBmW99zquHqWrb5"
-                src={linkku}
+                src={scanResult}
                 type="audio/mpeg"
               />
               Your browser does not support the audio element.
