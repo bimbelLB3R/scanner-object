@@ -42,7 +42,7 @@ export default function Scan2() {
   return (
     <div>
       {scanResult ? (
-        <div className="flex justify-center">
+        <div className="flex justify-center items-center m-auto h-screen">
           {/* Success: <a href={"http://" + scanResult}>{scanResult}</a> */}
           <div>
             <audio id="audioku" controls>
@@ -52,9 +52,11 @@ export default function Scan2() {
               />
               Your browser does not support the audio element.
             </audio>
-            <a href="/scan" className="p-2 m-6 bg-blue-400 text-center">
-              Back
-            </a>
+            <div className="flex items-center justify-center">
+              <a href="/scan" className="p-2 m-10 bg-blue-400 text-center">
+                SCAN LAGI?
+              </a>
+            </div>
           </div>
         </div>
       ) : (
