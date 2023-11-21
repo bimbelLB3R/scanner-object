@@ -42,15 +42,20 @@ export default function Scan2() {
   return (
     <div>
       {scanResult ? (
-        <div>
-          Success: <a href={"http://" + scanResult}>{scanResult}</a>
-          <audio id="audioku" controls>
-            <source
-              src="https://drive.google.com/uc?id=1YQ4FwNk1nEEaLtDpgeBmW99zquHqWrb5"
-              type="audio/mpeg"
-            />
-            Your browser does not support the audio element.
-          </audio>
+        <div className="flex justify-center">
+          {/* Success: <a href={"http://" + scanResult}>{scanResult}</a> */}
+          <div>
+            <audio id="audioku" controls>
+              <source
+                src="https://drive.google.com/uc?id=1YQ4FwNk1nEEaLtDpgeBmW99zquHqWrb5"
+                type="audio/mpeg"
+              />
+              Your browser does not support the audio element.
+            </audio>
+            <a href="#" className="p-2 m-2 bg-blue-400">
+              Back
+            </a>
+          </div>
         </div>
       ) : (
         <div id="reader"></div>
