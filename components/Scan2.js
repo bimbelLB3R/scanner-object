@@ -58,17 +58,21 @@ export default function Scan2() {
       playAudio();
     }
   }, [scanResult]);
+  const linkku = hasilScan.substring(4);
 
   return (
     <div>
       {hasilScan ? (
         <div className="flex justify-center items-center m-auto h-screen bg-[url('/image/bgsatt.jpeg')] bg-cover bg-no-repeat">
-          {/* Success: <a href={"http://" + scanResult}>{scanResult}</a> */}
+          Success:{" "}
+          <a href="">
+            {hasilScan},{linkku}
+          </a>
           <div>
             <audio id="audioku" controls>
               <source
                 // src="https://drive.google.com/uc?id=1YQ4FwNk1nEEaLtDpgeBmW99zquHqWrb5"
-                src={hasilScan.substring(4)}
+                src={linkku}
                 type="audio/mpeg"
               />
               Your browser does not support the audio element.
