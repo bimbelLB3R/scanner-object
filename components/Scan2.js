@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 export default function Scan2() {
   const [scanResult, setScanResult] = useState(null);
   const router = useRouter();
+
   useEffect(() => {
     const scanner = new Html5QrcodeScanner("reader", {
       qrbox: {
@@ -15,27 +16,34 @@ export default function Scan2() {
       },
       fps: 5,
     });
+
     scanner.render(success, error);
+
     function success(result) {
       scanner.clear();
       setScanResult(result);
-      // Check if the result does not start with "https://drive.google.com"
-      if (!result.startsWith("https://drive.google.com")) {
-        // Display an alert
-        alert("QRcode belum terdaftar!!!");
-
-        // Redirect to the main page
-        router.push("/");
-      }
     }
+
     function error(err) {
       console.warn(err);
     }
+
     // Clean up the scanner when the component unmounts
     return () => {
       scanner.stop();
     };
-  }, [router]);
+  }, []);
+
+  useEffect(() => {
+    // Check if the result does not start with "https://drive.google.com"
+    if (scanResult && !scanResult.startsWith("https://drive.google.com")) {
+      // Display an alert
+      alert("QRcode belum terdaftar!!!");
+
+      // Redirect to the main page
+      router.push("/");
+    }
+  }, [router, scanResult]);
 
   useEffect(() => {
     // Fungsi untuk memainkan audio
