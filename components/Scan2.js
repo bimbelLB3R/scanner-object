@@ -55,7 +55,6 @@ export default function Scan2() {
       playAudio();
     }
   }, [scanResult]);
-  const linkku = hasilScan.substring(4);
 
   return (
     <div>
