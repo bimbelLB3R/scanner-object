@@ -52,7 +52,7 @@ export default function Scan2() {
               />
               Your browser does not support the audio element.
             </audio>
-            <a href="#" className="p-2 m-2 bg-blue-400">
+            <a href="/scan" className="p-2 m-6 bg-blue-400 text-center">
               Back
             </a>
           </div>
