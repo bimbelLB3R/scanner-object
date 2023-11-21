@@ -31,7 +31,11 @@ export default function Scan2() {
     function error(err) {
       console.warn(err);
     }
-  }, []);
+    // Clean up the scanner when the component unmounts
+    return () => {
+      scanner.stop();
+    };
+  }, [router]);
 
   useEffect(() => {
     // Fungsi untuk memainkan audio
