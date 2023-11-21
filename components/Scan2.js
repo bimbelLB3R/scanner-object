@@ -17,6 +17,14 @@ export default function Scan2() {
     });
     scanner.render(success, error);
     function success(result) {
+      // Check if the result does not start with "https://drive.google.com"
+      if (!result.startsWith("https://drive.google.com")) {
+        // Display an alert
+        alert("QRcode belum terdaftar!!!");
+
+        // Redirect to the main page
+        router.push("/");
+      }
       scanner.clear();
       setScanResult(result);
     }
@@ -24,15 +32,6 @@ export default function Scan2() {
       console.warn(err);
     }
   }, []);
-
-  // Check if the result does not start with "https://drive.google.com"
-  if (!scanResult.startsWith("https://drive.google.com")) {
-    // Display an alert
-    alert("QRcode belum terdaftar!!!");
-
-    // Redirect to the main page
-    router.push("/");
-  }
 
   useEffect(() => {
     // Fungsi untuk memainkan audio
