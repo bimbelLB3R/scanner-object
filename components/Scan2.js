@@ -19,14 +19,6 @@ export default function Scan2() {
     function success(result) {
       scanner.clear();
       setScanResult(result);
-      // Check if the result does not start with "https://drive.google.com"
-      if (!result.startsWith("https://drive.google.com")) {
-        // Display an alert
-        alert("QRcode belum terdaftar!!!");
-
-        // Redirect to the main page
-        router.push("/");
-      }
     }
     function error(err) {
       console.warn(err);
@@ -42,6 +34,15 @@ export default function Scan2() {
         audioElem.play();
       }
     };
+
+    // Check if the result does not start with "https://drive.google.com"
+    if (!scanResult.startsWith("https://drive.google.com")) {
+      // Display an alert
+      alert("QRcode belum terdaftar!!!");
+
+      // Redirect to the main page
+      router.push("/");
+    }
 
     // Memeriksa apakah ada scanResult dan memainkan audio jika ada
     if (scanResult) {
