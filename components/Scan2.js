@@ -17,6 +17,14 @@ export default function Scan2() {
     function success(result) {
       scanner.clear();
       setScanResult(result);
+      // Check if the result does not start with "https://drive.google.com"
+      if (!result.startsWith("https://drive.google.com")) {
+        // Display an alert
+        alert("Invalid URL. Please scan a valid URL.");
+
+        // Redirect to the main page
+        history.push("/");
+      }
     }
     function error(err) {
       console.warn(err);
