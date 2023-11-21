@@ -2,9 +2,11 @@
 import React, { useEffect } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
 import { useState } from "react";
+import { useHistory } from "react-router-dom"; // Import useHistory from react-router-dom
 
 export default function Scan2() {
   const [scanResult, setScanResult] = useState(null);
+  const history = useHistory(); // Initialize useHistory
   useEffect(() => {
     const scanner = new Html5QrcodeScanner("reader", {
       qrbox: {
@@ -20,10 +22,10 @@ export default function Scan2() {
       // Check if the result does not start with "https://drive.google.com"
       if (!result.startsWith("https://drive.google.com")) {
         // Display an alert
-        alert("Invalid URL. Please scan a valid URL.");
+        alert("QRcode belum terdaftar!!!");
 
         // Redirect to the main page
-        history.push("/");
+        history.push("/scan");
       }
     }
     function error(err) {
