@@ -23,11 +23,34 @@ export default function Scan2() {
     }
   }, []);
 
+  useEffect(() => {
+    // Fungsi untuk memainkan audio
+    const playAudio = () => {
+      const audioElem = document.getElementById("audioku");
+
+      if (audioElem) {
+        audioElem.play();
+      }
+    };
+
+    // Memeriksa apakah ada scanResult dan memainkan audio jika ada
+    if (scanResult) {
+      playAudio();
+    }
+  }, [scanResult]);
+
   return (
     <div>
       {scanResult ? (
         <div>
           Success: <a href={"http://" + scanResult}>{scanResult}</a>
+          <audio id="audioku" controls>
+            <source
+              src="https://drive.google.com/uc?id=1YQ4FwNk1nEEaLtDpgeBmW99zquHqWrb5"
+              type="audio/mpeg"
+            />
+            Your browser does not support the audio element.
+          </audio>
         </div>
       ) : (
         <div id="reader"></div>
