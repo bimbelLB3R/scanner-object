@@ -42,7 +42,7 @@ export default function Scan2() {
   return (
     <div>
       {scanResult ? (
-        <div className="flex justify-center items-center m-auto h-screen">
+        <div className="flex justify-center items-center m-auto h-screen bg-[url('/image/bgsatt.jpeg')] bg-cover bg-no-repeat">
           {/* Success: <a href={"http://" + scanResult}>{scanResult}</a> */}
           <div>
             <audio id="audioku" controls>
