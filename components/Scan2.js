@@ -2,11 +2,11 @@
 import React, { useEffect } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
 import { useState } from "react";
-import { useHistory } from "react-router-dom"; // Import useHistory from react-router-dom
+import { useRouter } from "next/router";
 
 export default function Scan2() {
   const [scanResult, setScanResult] = useState(null);
-  const history = useHistory(); // Initialize useHistory
+  const router = useRouter();
   useEffect(() => {
     const scanner = new Html5QrcodeScanner("reader", {
       qrbox: {
@@ -25,7 +25,7 @@ export default function Scan2() {
         alert("QRcode belum terdaftar!!!");
 
         // Redirect to the main page
-        history.push("/scan");
+        router.push("/");
       }
     }
     function error(err) {
