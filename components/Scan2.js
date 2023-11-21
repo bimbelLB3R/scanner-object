@@ -68,6 +68,11 @@ export default function Scan2() {
                 src={scanResult}
                 type="audio/mpeg"
               />
+              <source src={scanResult} type="audio/aac" />
+              <source src={scanResult} type="audio/wav" />
+              <source src={scanResult} type="audio/ogg" />
+              <source src={scanResult} type="audio/flac" />
+              <source src={scanResult} type="audio/webm" />
               Your browser does not support the audio element.
             </audio>
             <div className="flex items-center justify-center space-x-3 mt-10">
