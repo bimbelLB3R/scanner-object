@@ -1,0 +1,9 @@
+/* TypingEffect.module.css */
+.typingEffect {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid orange; /* Ganti warna border sesuai kebutuhan */
+  white-space: nowrap;
+  margin: 0;
+  letter-spacing: 0.15em;
+}
