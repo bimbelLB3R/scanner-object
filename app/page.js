@@ -1,6 +1,18 @@
+"use client";
+import YoutubePlayer from "@/components/YoutubePlayer";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [isYoutubePopupOpen, setYoutubePopupOpen] = useState(false);
+
+  const openYoutubePopup = () => {
+    setYoutubePopupOpen(true);
+  };
+
+  const closeYoutubePopup = () => {
+    setYoutubePopupOpen(false);
+  };
   return (
     <main className="flex min-h-screen flex-col items-center justify-between pt-24 pl-16 pr-16 pb-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -44,23 +56,24 @@ export default function Home() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Scan dan pelajari materi.
+            Eksplorasi Suara Alam.
           </p>
         </a>
 
         <a
           href="#"
+          onClick={openYoutubePopup}
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Tentang SATT{" "}
+            Profil{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Yuk, kenalan dengan SATT, tak kenal maka&nbsp;ta'aruf!
+            Mengenal lebih dekat Sekolah Alam Tanjug Tabalong
           </p>
         </a>
 
@@ -70,13 +83,13 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Program Unggulan{" "}
+            Video Dokumentasi{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Beda dengan sekolah lain, SATT memiliki program unggulan yang unik.
+            Video dokumentasi kegiatan, terbaru dan ter up date
           </p>
         </a>
 
@@ -92,10 +105,28 @@ export default function Home() {
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Kamu sudah siap untuk berpetualang di SATT?
+            Formulir pendaftaran siswa baru secara on line
           </p>
         </a>
       </div>
+      {isYoutubePopupOpen && (
+        <div className="absolute top-0 z-20  w-full bg-green-900/50">
+          <div className="flex items-center justify-center h-screen m-auto">
+            <div>
+              <div className="flex items-center justify-end">
+                <button
+                  className="text-2xl p-1 m-2 text-red-800 border-1 underline"
+                  onClick={closeYoutubePopup}
+                >
+                  X
+                </button>
+              </div>
+
+              <YoutubePlayer />
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
