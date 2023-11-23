@@ -4,10 +4,11 @@ import "./typingtext.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// export const metadata = {
-//   title: "Sekolah Alam SATT",
-//   description: "Sekolah Paling Keren di Tabalong",
-// };
+export const metadata = {
+  title: "Sekolah Alam SATT",
+  description: "Sekolah Paling Keren di Tabalong",
+  openGraph: { images: "/image/gurusatt.jpeg" },
+};
 
 export default function RootLayout({ children }) {
   return (

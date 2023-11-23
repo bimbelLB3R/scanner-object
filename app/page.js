@@ -5,7 +5,6 @@ import { useState } from "react";
 import TypingEffect from "@/components/TypingText";
 import Formulir from "@/components/Formulir";
 import Wa from "@/components/Wa";
-import Head from "next/head";
 
 export default function Home() {
   const [isYoutubePopupOpen, setYoutubePopupOpen] = useState(false);
@@ -29,25 +28,6 @@ export default function Home() {
   };
   return (
     <>
-      <Head>
-        <title>Official SATT</title>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="4x16"
-          href="/image/logosatt.png"
-        />
-        <meta
-          name="description"
-          content="Belajar, berpetualang dan bermakna"
-          key="desc"
-        />
-        <meta
-          property="og:image"
-          itemProp="image"
-          content="https://raw.githubusercontent.com/bimbelLB3R/scanner-object/main/public/image/gurusatt.jpeg"
-        />
-      </Head>
       <main className="flex min-h-screen flex-col items-center justify-between pt-24 pl-16 pr-16 pb-24 bg-[url('/image/bambu.jpeg')] bg-cover bg-no-repeat">
         <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
           <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
