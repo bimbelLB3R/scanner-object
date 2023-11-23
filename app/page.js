@@ -45,7 +45,7 @@ export default function Home() {
         <meta
           property="og:image"
           itemProp="image"
-          content="https://raw.githubusercontent.com/bimbelLB3R/ruleslb3r/main/public/image/image1.webp"
+          content="https://raw.githubusercontent.com/bimbelLB3R/scanner-object/main/public/image/gurusatt.jpeg"
         />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-between pt-24 pl-16 pr-16 pb-24 bg-[url('/image/bambu.jpeg')] bg-cover bg-no-repeat">
