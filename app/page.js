@@ -28,7 +28,7 @@ export default function Home() {
   };
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between pt-24 pl-16 pr-16 pb-24 bg-[url('/image/bambu.jpeg')] bg-cover bg-no-repeat">
+      <main className="flex min-h-screen flex-col items-center justify-between pt-24 pl-16 pr-16 pb-24 bg-[url('/image/bambu.jpeg')] bg-cover bg-no-repeat md:bg-none">
         <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
           <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
             <code className="font-mono font-bold">
@@ -157,7 +157,7 @@ export default function Home() {
           </div>
         )}
         {isFormulirPopupOpen && (
-          <div className="absolute top-0 z-20  w-full bg-green-900/50">
+          <div className="absolute top-0 z-20  w-full h-screen bg-green-900/50">
             <div className="flex items-center justify-center ">
               <div>
                 <div className="flex items-center justify-center">
