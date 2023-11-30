@@ -3,7 +3,7 @@ import Link from "next/link";
 const Wa = () => {
   return (
     <div>
-      <div className="fixed bottom-12 right-8 md:bottom-12 md:right-12 z-30">
+      <div className="fixed animate-bounce bottom-12 right-8 md:bottom-12 md:right-12 z-30">
         <Link
           href="https://wa.me/6285752112725"
           target="_blank"
